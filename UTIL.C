@@ -17,6 +17,7 @@ void printToken( TokenType token, const char* tokenString )
   { case IF:
     case THEN:
     case ELSE:
+	case WHILE:
     case END:
     case REPEAT:
     case UNTIL:
@@ -136,6 +137,8 @@ void printTree( TreeNode * tree )
           break;
         case RepeatK:
           fprintf(listing,"Repeat\n");
+		case WhileK:
+			fprintf(listing, "While\n");
           break;
         case AssignK:
           fprintf(listing,"Assign to: %s\n",tree->attr.name);
